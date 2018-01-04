@@ -70,6 +70,8 @@ type Props = {
   ) => void,
   onUnregisterNavigatorContext: (navigatorUID: string) => void,
   navigationState: Object,
+  afterClose: () => void,
+  afterOpen: () => void
 };
 
 type State = {
@@ -150,6 +152,8 @@ class ExNavigationDrawer extends PureComponent<any, Props, State> {
 
     return (
       <ExNavigationDrawerLayout
+      	afterClose={this.props.afterClose}
+      	afterOpen={this.props.afterOpen}
         ref={component => {
           this._drawerLayout = component;
         }}

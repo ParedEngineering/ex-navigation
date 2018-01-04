@@ -44,9 +44,11 @@ export default class ExNavigationDrawerLayout extends React.Component {
         }}
         onDrawerClose={() => {
           this.setState({ isOpen: false });
+          this.props.afterClose && this.props.afterClose()
         }}
         onDrawerOpen={() => {
           this.setState({ isOpen: true });
+          this.props.afterOpen && this.props.afterOpen()
         }}
         drawerBackgroundColor={this.props.drawerBackgroundColor}
         drawerWidth={this.props.width}
