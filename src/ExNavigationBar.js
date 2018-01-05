@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   ViewPropTypes,
+  Dimensions
 } from 'react-native';
 import PropTypes from 'prop-types';
 import PureComponent from './utils/PureComponent';
@@ -38,7 +39,7 @@ const BORDER_BOTTOM_WIDTH = Platform.OS === 'ios'
   ? StyleSheet.hairlineWidth
   : 0;
 const BACK_BUTTON_HIT_SLOP = { top: 0, bottom: 0, left: 0, right: 30 };
-const isIPhoneX = Platform.OS === 'ios' && width === 375 && height === 812;
+const isIPhoneX = Platform.OS === 'ios' && Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812;
 
 class ExNavigationBarTitle extends PureComponent {
   render() {
