@@ -38,6 +38,7 @@ const BORDER_BOTTOM_WIDTH = Platform.OS === 'ios'
   ? StyleSheet.hairlineWidth
   : 0;
 const BACK_BUTTON_HIT_SLOP = { top: 0, bottom: 0, left: 0, right: 30 };
+const isIPhoneX = Platform.OS === 'ios' && width === 375 && height === 812;
 
 class ExNavigationBarTitle extends PureComponent {
   render() {
@@ -284,7 +285,7 @@ export default class ExNavigationBar extends PureComponent {
           <View
             style={[
               styles.appbarInnerContainer,
-              { top: this.props.statusBarHeight },
+              { top: isIPhoneX ? 0 : this.props.statusBarHeight },
             ]}>
             {titleComponents}
             {leftComponents}
