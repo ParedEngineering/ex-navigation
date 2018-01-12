@@ -11,7 +11,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import DrawerLayout from 'react-native-drawer-layout-polyfill';
+import DrawerLayout from './DrawerLayout';
 import TouchableNativeFeedbackSafe
   from '@expo/react-native-touchable-native-feedback-safe';
 
