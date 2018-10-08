@@ -39,7 +39,10 @@ const BORDER_BOTTOM_WIDTH = Platform.OS === 'ios'
   ? StyleSheet.hairlineWidth
   : 0;
 const BACK_BUTTON_HIT_SLOP = { top: 0, bottom: 0, left: 0, right: 30 };
-const isIPhoneX = Platform.OS === 'ios' && Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812;
+const isIPhoneX = Platform.OS === 'ios' && (
+	(Dimensions.get('window').width === 375 && Dimensions.get('window').height === 812) ||
+		(Dimensions.get('window').width === 414 && Dimensions.get('window').height === 896)
+		);
 
 class ExNavigationBarTitle extends PureComponent {
   render() {
