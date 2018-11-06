@@ -270,7 +270,7 @@ export default class ExNavigationBar extends PureComponent {
     const backgroundComponents = scenesProps.map(this._renderBackground, this);
     const wrapperStyle = [
       styles.wrapper,
-      { paddingTop: APPBAR_HEIGHT + this.props.statusBarHeight },
+      { paddingTop: isIPhoneX ? 44 : this.props.statusBarHeight + APPBAR_HEIGHT },
     ];
 
     return (
